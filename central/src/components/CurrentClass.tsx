@@ -11,9 +11,10 @@ const CurrentClass = () => {
 
   useEffect(() => {
     const fetchSchedule = async (date: Date) => {
-      const month = date.getMonth() + 1; // getMonth() is zero-based
+      const month = date.getMonth() + 1;
       const day = date.getDate();
       const year = date.getFullYear();
+      console.log(month, day, year);
 
       try {
         const response = await axios.get('https://msbell-backend.harker.xyz/api/schedule', {
@@ -98,7 +99,7 @@ const CurrentClass = () => {
     };
 
     updateClassInfo();
-    const interval = setInterval(updateClassInfo, 60000); // Update every minute
+    const interval = setInterval(updateClassInfo, 60000);
 
     return () => clearInterval(interval);
   }, []);

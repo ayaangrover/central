@@ -14,7 +14,7 @@ const NewsHeadlines = () => {
           {
             params: {
               country: 'us',
-              apiKey: 'b2f8516bddfc4d18bd602d4a080ec227',
+              apiKey: process.env.NEXT_PUBLIC_NEWS_API_KEY,
               category: 'general',
             },
           }

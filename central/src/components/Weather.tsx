@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Weather = () => {
-  const city = 'Saratoga, CA';
+  const city = 'Sacramento, CA ,US'
   const [temperature, setTemperature] = useState<number | null>(null);
 
   useEffect(() => {
@@ -14,9 +14,9 @@ const Weather = () => {
           'https://api.openweathermap.org/data/2.5/weather',
           {
             params: {
-              q: 'Saratoga,CA,US',
-              appid: '3df404f02f990e18c84f0ecff75b6963',
-              units: 'imperial', // Use Fahrenheit
+              q: 'Sacramento,CA,US',
+              appid: process.env.NEXT_PUBLIC_WEATHER_API_KEY,
+              units: 'imperial',
             },
           }
         );

@@ -4,8 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const StockTicker = () => {
-  const stocks = ['PANW', 'AAPL', 'GOOGL']; // Predefined list of stocks
-  const [selectedStock, setSelectedStock] = useState<string>('PANW');
+  const [selectedStock, setSelectedStock] = useState<string>('AAPL');
   const [price, setPrice] = useState<number | null>(null);
 
   useEffect(() => {
@@ -15,7 +14,7 @@ const StockTicker = () => {
           `https://api.polygon.io/v2/aggs/ticker/${selectedStock}/prev`,
           {
             params: {
-              apiKey: 'tmcPLSICXH5pB4qA_QxB4TQI0LDGcLeE',
+              apiKey: process.env.NEXT_PUBLIC_STOCK_API_KEY,
             },
           }
         );

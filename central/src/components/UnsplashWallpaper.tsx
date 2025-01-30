@@ -15,7 +15,7 @@ const UnsplashWallpaper = () => {
             params: {
               query: 'nature,landscape',
               orientation: 'landscape',
-              client_id: 'k_wsGnTBKq0iHfaBoPo6ysBuJEXdazBQ33YLZAAizyY',
+              client_id: process.env.NEXT_PUBLIC_UNSPLASH_API_KEY,
             },
           }
         );
@@ -25,11 +25,11 @@ const UnsplashWallpaper = () => {
       }
     };
 
-    fetchImage(); // Fetch image on initial render
+    fetchImage();
 
-    const interval = setInterval(fetchImage, 600000); // Fetch image every 60 seconds
+    const interval = setInterval(fetchImage, 600000);
 
-    return () => clearInterval(interval); // Clear interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
