@@ -1,7 +1,9 @@
 # central
 a dashboard for small displays.
 works on RPI, try to avoid OLED displays(they're succeptible to burn-in)
-made in node.js. includes many widgets to mimic ipados like weather, stocks, school schedule, time, news, and date and has a unsplash background
+made in node.js. includes many widgets to mimic ipados like weather, stocks, school schedule, time, news, and date and has a unsplash background.
+
+uses [NewsAPI](https://newsapi.org/), [OpenWeatherMap](https://openweathermap.org/), [Polygon.io](https://polygon.io/), [Unsplash API](https://unsplash.com/developers) and my school schedule's API. also uses some libraries for date and time.
 
 ai used lightly as an assistant.
 
